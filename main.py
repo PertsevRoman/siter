@@ -42,6 +42,7 @@ def create_domain(stor):
     f.close()
     out.close()
 
+
 def main():
     """Точка входа"""
     stor = {}
