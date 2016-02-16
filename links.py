@@ -15,7 +15,14 @@ def main():
 
     dirs = input('Dirs path: ')
 
-    print('%s %s' % (serv_name, ' '.join(['%s.%s.%s' % (name, domain, zone) for name in os.listdir(dirs)])))
+    f = open('out', 'w')
+
+    w = ['%s %s.%s.%s' % (serv_name, name, domain, zone) for name in os.listdir(dirs)]
+
+    for dom in w:
+        f.write(dom)
+
+    f.close()
 
 if __name__ == '__main__':
     main()
