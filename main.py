@@ -30,7 +30,7 @@ def create_domain(stor):
     stor['err_log'] = '%s/%s/%s-err.log' % (stor['logs_dir'], stor['dom_name'], stor['site_name'])
 
     f = open('template')
-    out = open('%s-%s.conf' % (stor['site_name'], stor['dom_name']), 'w')
+    out = open('%s/%s-%s.conf' % (stor['out_dir'], stor['site_name'], stor['dom_name']), 'w')
 
     for line in f.read().splitlines():
         va = line
@@ -59,8 +59,16 @@ def main():
     stor['dom_name'] = input('Domain name: ')
     stor['zone'] = input('Zone [ru]: ')
 
+    stor['out_dir'] = input('Out dir [.]: ')
+
     if stor['zone'] == '':
         stor['zone'] = 'ru'
+
+    if stor['out_dir'] == '':
+        stor['out_dir'] = '.'
+    else:
+        if not os.path.exists(stor['out_dir']) or not os.path.isdir(stor['out_dir']):
+            raise Exception('Директория не существует или это не директория')
 
     if from_dirs:
         for name in os.listdir(dirs_location):
