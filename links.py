@@ -1,7 +1,8 @@
+#!/usr/bin/python3
 import os
 
 
-def links():
+def main():
     serv_name = input('Serv name [91.203.194.99]: ')
     domain = input('Domain name: ')
     zone = input('Zone [ru]: ')
@@ -16,4 +17,5 @@ def links():
 
     print('%s %s' % (serv_name, ' '.join(['%s.%s.%s' % (name, domain, zone) for name in os.listdir(dirs)])))
 
-links()
+if __name__ == '__main__':
+    main()
