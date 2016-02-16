@@ -21,6 +21,7 @@ def main():
 
     for dom in w:
         f.write(dom)
+        f.write(os.linesep)
 
     f.close()
 
