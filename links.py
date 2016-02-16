@@ -15,7 +15,7 @@ def main():
 
     dirs = input('Dirs path: ')
 
-    f = open('out', 'w')
+    f = open(domain, 'w')
 
     w = ['%s %s.%s.%s' % (serv_name, name, domain, zone) for name in os.listdir(dirs)]
 
