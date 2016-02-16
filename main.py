@@ -59,13 +59,13 @@ def main():
     stor['dom_name'] = input('Domain name: ')
     stor['zone'] = input('Zone [ru]: ')
 
-    stor['out_dir'] = input('Out dir [.]: ')
+    stor['out_dir'] = input('Out dir [/etc/nginx/sites-available]: ')
 
     if stor['zone'] == '':
         stor['zone'] = 'ru'
 
     if stor['out_dir'] == '':
-        stor['out_dir'] = '.'
+        stor['out_dir'] = '/etc/nginx/sites-available'
     else:
         if not os.path.exists(stor['out_dir']) or not os.path.isdir(stor['out_dir']):
             raise Exception('Директория не существует или это не директория')
