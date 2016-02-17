@@ -1,0 +1,8 @@
+<VirtualHost *:80>
+    ServerAdmin pertsev.roman@gmail.com
+    ServerName site_name$.$dom_name$.$zone$
+    ServerAlias www.site_name$.$dom_name$.$zone$
+    DocumentRoot $root_dir$
+    ErrorLog $logs_dir$/$dom_name$/$site_name$-err.log
+    CustomLog $logs_dir$/$dom_name$/$site_name$-acc.log combined
+</VirtualHost>
