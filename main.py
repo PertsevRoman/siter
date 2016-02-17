@@ -29,7 +29,7 @@ def create_domain(stor):
     stor['acc_log'] = '%s/%s/%s-acc.log' % (stor['logs_dir'], stor['dom_name'], stor['site_name'])
     stor['err_log'] = '%s/%s/%s-err.log' % (stor['logs_dir'], stor['dom_name'], stor['site_name'])
 
-    f = open('template')
+    f = open('template-apache')
     out = open('%s/%s-%s.conf' % (stor['out_dir'], stor['site_name'], stor['dom_name']), 'w')
 
     for line in f.read().splitlines():
